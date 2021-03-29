@@ -52,6 +52,8 @@ Dimension Tables
 
 ### Logic model
 
+![Emeralds supply chain process](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres
+/blob/main/images/ERD_Postgres_Database.png)
 
 
 ## Project structure
@@ -71,8 +73,8 @@ The ETL process is developed in the etl.py script. Data is load from the JSON fi
 
 ### ETL pipeline diagram
 
-
-
+![Emeralds supply chain process](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres
+/blob/main/images/ETL_Pipeline.png)
 
 ## Instructions to run the pipeline
 
