@@ -72,8 +72,7 @@ The ETL process is developed in the etl.py script. Data is load from the JSON fi
 
 ### ETL pipeline diagram
 
-![Emeralds supply chain process](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres
-/blob/main/images/ETL_Pipeline.png)
+![ETL pipeline diagram](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres/blob/main/images/ETL_Pipeline.png)
 
 ## Instructions to run the pipeline
 
