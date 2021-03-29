@@ -52,8 +52,7 @@ Dimension Tables
 
 ### Logic model
 
-![Emeralds supply chain process](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres
-/blob/main/images/ERD_Postgres_Database.png)
+![Logic model](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres/blob/main/images/ERD_Postgres_Database.png)
 
 
 ## Project structure
