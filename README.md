@@ -10,7 +10,7 @@ This repository is for the first Data Engineering Nanodegree project from Udacit
 
 ## Problem understanding
 
-In this project, you'll apply what you've learned on data modeling with Postgres and build an ETL pipeline using Python. To complete the project, you will need to define fact and dimension tables for a star schema for a particular analytic focus, and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL. The task is to create a database schema and upload the data into a PostgreSQL database and implement an ETL pipeline for this analysis.
+Define fact and dimension tables for a star schema for a particular analytic focus and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL. The task is to create a database schema and upload the data into a PostgreSQL database and implement an ETL pipeline for this analysis.
 
 
 ## Data description
@@ -56,21 +56,23 @@ Dimension Tables
 
 ## Project structure
 
-The project strucutra is based on the Udacity's project template:
-1. **test.ipynb** displays the first few rows of each table to let you check your database.
-2. **create_tables.py** drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts.
-3. **etl.ipynb** reads and processes a single file from song_data and log_data and loads the data into your tables.
-5. **etl.py** reads and processes files from song_data and log_data and loads them into the databse tables. 
-7. **sql_queries.py** contains all your sql queries, and is imported into the last three files above.
-8. **README.md** provides discussion on your project.
+The project structure is based on the Udacity's project template:
+1. **test.ipynb** displays the first few rows of each table to let you check your database
+2. **create_tables.py** drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts
+3. **etl.ipynb** reads and processes a single file from song_data and log_data and loads the data into your tables
+5. **etl.py** reads and processes files from song_data and log_data and loads them into the databse tables
+7. **sql_queries.py** contains all the sql queries for create and fill the tables
+8. **README.md** provides discussion on your project
 
 ## ETL Pipeline description
 
 ### etl.py
-The ETL process is developed in the etl.py script. Data is load from the Json files firts from songs dataset and extracting song_id, title, artist_id, year, duration columns and filling songs table and artist table. (function process_song_file).
-The second dataser is load from logs files to fill the tables time and users. In both cases the data is loaded to pandas dataframes, and then cleaned adn filtered and using psycopg2 the sql insert scripts (sql_queries) for fill all the tables.
+The ETL process is developed in the etl.py script. Data is load from the JSON files first from the songs dataset and extracting song_id, title, artist_id, year, duration columns and filling the songs table and artist table. (function process_song_file). The second dataset is load from logs files to fill the tables time and users. In both cases, the data is loaded to pandas data frames, and then cleaned and filtered and using psycopg2 the SQL insert scripts (sql_queries) to fill all the tables.
 
 ### ETL pipeline diagram
+
+
+
 
 ## Instructions to run the pipeline
 
@@ -79,12 +81,12 @@ A. Componentes required
   2. Jupyter notebooks environment available
   3. Python packages: psycopg2, pandas and python-sql
 
-B Runnint the pipeline
+B Running the pipeline
 
   1. Clone the respository
-  2. Run create_tables.py (Drop tables and create again).
-  4. Run etl.py (Run the ETL process).
-  5. Run test.ipynb notebook to validate with son example querys.
+  2. Run create_tables.py (Drop tables and create again)
+  4. Run etl.py (Run the ETL process)
+  5. Run test.ipynb notebook to validate with son example querys
 
 ## Author 
 Fernando Bonilla [linkedin](https://www.linkedin.com/in/fer-bonilla/)
