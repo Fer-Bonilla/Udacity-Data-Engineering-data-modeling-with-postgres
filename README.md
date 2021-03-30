@@ -34,26 +34,23 @@ The project uses data from [Million Song Dataset](https://labrosa.ee.columbia.ed
 
 The database will be designed for analytics using Fact and Dimensions tables on a Star Schema architecture:
 
-Fact Table
+**Fact Table**
 
   1.songplays - records in log data associated with song plays i.e. records with page NextSong
     songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 
-Dimension Tables
-  2. users - users in the app
-     user_id, first_name, last_name, gender, level
-  3. songs - songs in music database
-     song_id, title, artist_id, year, duration
-  4. artists - artists in music database
-     artist_id, name, location, latitude, longitude
-  5. time - timestamps of records in songplays broken down into specific units
-     start_time, hour, day, week, month, year, weekday
+
+**Dimension Tables**
+
+  2. users - users in the app: user_id, first_name, last_name, gender, level
+  3. songs - songs in music database: song_id, title, artist_id, year, duration
+  4. artists - artists in music database: artist_id, name, location, latitude, longitude
+  5. time - timestamps of records in songplays broken down into specific units: start_time, hour, day, week, month, year, weekday
 
 
 ### Logic model
 
-![Emeralds supply chain process](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres
-/blob/main/images/ERD_Postgres_Database.png)
+![Logic model](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres/blob/main/images/ERD_Postgres_Database.png)
 
 
 ## Project structure
@@ -73,8 +70,7 @@ The ETL process is developed in the etl.py script. Data is load from the JSON fi
 
 ### ETL pipeline diagram
 
-![Emeralds supply chain process](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres
-/blob/main/images/ETL_Pipeline.png)
+![ETL pipeline diagram](https://github.com/Fer-Bonilla/Udacity-Data-Engineering-data-modeling-with-postgres/blob/main/images/ETL_Pipeline.png)
 
 ## Instructions to run the pipeline
 
