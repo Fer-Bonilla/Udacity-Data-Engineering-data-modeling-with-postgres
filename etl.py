@@ -1,3 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+    This script implements the ETL pipeline to read json files and insert into dimensions and fact tables:
+    
+    Dimension tables:
+        - users - users in the app: user_id, first_name, last_name, gender, level
+        - songs - songs in music database: song_id, title, artist_id, year, duration
+        - artists - artists in music database: artist_id, name, location, latitude, longitude
+        - time - timestamps of records in songplays: start_time, hour, day, week, month, year, weekday
+    
+    Fact Table:
+        - songplays - records in log data associated with song plays.
+        
+    The pipeline is implemented using dataframes loading data from Postgres database with the psycopg2 conector.    
+        
+"""
+
+
 import os
 import glob
 import psycopg2
@@ -7,6 +25,25 @@ from sql_queries import *
 
 def process_song_file(cur, filepath):
     # open song file
+    """
+        The function process_song_file read a json formatted file and filter fields to insert into
+        songs and artist tables using pandas dataframes.
+        
+        Parameters:
+            cur (str): 
+                psycopg2 cursor connection object.
+            filepath (str): 
+                string with the song json file location.
+    
+        Returns:
+            None
+    """    
+    
+    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
+    cur = conn.cursor()
+    
+    
+    
     df = pd.read_json(filepath,lines=True)
     
     # insert song record
@@ -20,6 +57,19 @@ def process_song_file(cur, filepath):
 
 def process_log_file(cur, filepath):
     # open log file
+    """
+        The function process_log_file read a json formatted file and filter fields to insert into
+        time, users and songplay tables using pandas dataframes.
+        
+        Parameters:
+            cur (str): 
+                psycopg2 cursor connection object.
+            filepath (str): 
+                string with the song json file location.
+    
+        Returns:
+            None
+    """      
     df = pd.read_json(filepath,lines=True)
 
     # filter by NextSong action
@@ -70,6 +120,27 @@ def process_log_file(cur, filepath):
 
 def process_data(cur, conn, filepath, func):
     # get all files matching extension from directory
+    
+    """
+        The function process_data read all the files available in the filepath location and iterate over each
+        file and call the function defined by the func parameter. 
+        
+        Parameters:
+            cur (str): 
+                psycopg2 cursor connection object.
+            conn (str): 
+                psycopg2 connection object.
+                
+            filepath (str): 
+                string with the files directory location
+                
+            func (function obj): 
+                Reference to a function object to call
+                
+        Returns:
+            None
+    """      
+    
     all_files = []
     for root, dirs, files in os.walk(filepath):
         files = glob.glob(os.path.join(root,'*.json'))
