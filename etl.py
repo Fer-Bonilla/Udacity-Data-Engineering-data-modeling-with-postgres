@@ -24,7 +24,7 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
-    # open song file
+
     """
         The function process_song_file read a json formatted file and filter fields to insert into
         songs and artist tables using pandas dataframes.
@@ -38,12 +38,7 @@ def process_song_file(cur, filepath):
         Returns:
             None
     """    
-    
-    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
-    cur = conn.cursor()
-    
-    
-    
+    # open song file        
     df = pd.read_json(filepath,lines=True)
     
     # insert song record
